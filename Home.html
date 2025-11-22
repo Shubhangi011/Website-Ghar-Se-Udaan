@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ghar Se Udaan</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      background-color: #4a6fa5;
+      color: white;
+      padding: 15px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 50px;
+      margin-right: 10px;
+    }
+
+    .logo-text h1 {
+      font-size: 28px;
+      font-family: papyrus, fantasy;
+    }
+
+    .logo-text p {
+      font-size: 14px;
+      font-family: Garamond, serif;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+
+    .nav-links li {
+      margin-left: 20px;
+    }
+
+    .btn2 {
+      display: inline-block;
+      background-color: #4a6fa5;
+      color: #fff;
+      padding: 8px 15px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .btn2:hover {
+      background: #365582;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #f9c74f;
+      color: #333;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #f8b739;
+      transform: translateY(-2px);
+    }
+
+    /* Hero Section */
+    .section1 {
+      background: linear-gradient(rgba(74, 111, 165, 0.8), rgba(74, 111, 165, 0.8)), url("w2.jpg");
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      padding: 180px 20px;
+      text-align: center;
+    }
+
+    .section1 h1 {
+      font-size: 60px;
+      color: #020932;
+    }
+
+    .section1 h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .section1 p {
+      font-size: 16px;
+      max-width: 700px;
+      margin: 0 auto 30px;
+    }
+
+    /* Hamburger Menu */
+    .hamburger {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background: #4a6fa5;
+        flex-direction: column;
+        width: 200px;
+        text-align: right;
+        padding: 15px;
+        border-radius: 10px;
+      }
+      .nav-links li {
+        margin: 10px 0;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .hamburger {
+        display: block;
+        color: white;
+      }
+      .section1 h1 {
+        font-size: 40px;
+      }
+      .section1 h2 {
+        font-size: 20px;
+      }
+      .section1 p {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <img src="logo2.jpg" alt="Ghar Se Udaan Logo">
+          <div class="logo-text">
+            <h1>GharSeUdaan</h1>
+            <p>Empowering Dreams from Home</p>
+          </div>
+        </div>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="Home.html" class="btn2">Home &nbsp;<i class="fa-solid fa-house"></i></a></li>
+          <li><a href="About.html" class="btn2">About &nbsp;<i class="fa-solid fa-circle-info"></i></a></li>
+          <li><a href="Stories.html" class="btn2">Stories &nbsp;<i class="fa-solid fa-crown"></i></a></li>
+          <li><a href="RegForm.html" class="btn2">Form &nbsp;<i class="fa-solid fa-user-plus"></i></a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="section1"
+    onmouseover="playAudio()"
+    onmouseout="stopAudio()">
+    <div class="container">
+      <h1>GharSeUdaan</h1>
+      <h2>Turn Your Home into a Launchpad for Success</h2>
+      <p>Ghar Se Udaan provides opportunities for women to work from home and utilize their skills to become independent.</p>
+      <a href="About.html" class="btn">Start Your Journey Today!</a>
+    </div>
+  </section>
+
+  <audio id="hoverAudio" src="Kudi Nu Nachne De Angrezi Medium 320 Kbps.mp3"></audio>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+
+    const audio = document.getElementById('hoverAudio');
+    function playAudio() {
+      audio.volume = 0.5;
+      audio.play();
+    }
+    function stopAudio() {
+      audio.pause();
+      audio.currentTime = 0;
+    }
+  </script>
+</body>
+</html>

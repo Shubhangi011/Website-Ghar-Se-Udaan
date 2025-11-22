@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register - Empower Her Work</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .header img.logo {
+      height: 60px;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: 38px;
+      margin-bottom: 10px;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      text-transform: uppercase;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      margin-right: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: all 0.3s;
+    }
+
+    .job-preferences {
+      background: linear-gradient(#ffddd2, #e29578);
+      padding: 20px;
+      border-radius: 8px;
+      margin: 25px 0;
+    }
+
+    .job-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+      margin-top: 15px;
+    }
+
+    .job-option {
+      display: flex;
+      align-items: center;
+    }
+
+    .job-option input {
+      margin-right: 10px;
+    }
+
+    .btn-submit {
+      background: linear-gradient(to left, rgb(74, 61, 61), purple);
+      color: white;
+      border: none;
+      padding: 14px;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: 600;
+      width: 20%;
+      cursor: pointer;
+      margin-left: 300px;
+      transition: all 0.3s;
+    }
+
+    .btn-submit:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+
+    .login-link {
+      text-align: center;
+      margin-top: 20px;
+      color: #666;
+    }
+
+    .login-link a {
+      font-weight: 600;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 15px;
+        padding: 15px;
+      }
+
+      .job-options {
+        grid-template-columns: 1fr;
+      }
+
+      img {
+        width: 200px;
+        height: 100px;
+      }
+    }
+
+    .balloon-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 9999;
+    }
+
+    .balloon {
+      position: absolute;
+      width: 40px;
+      height: 60px;
+      background-color: red;
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      animation: rise 4s ease-out forwards;
+    }
+
+    @keyframes rise {
+      0% {
+        transform: translateY(100vh) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-20vh) scale(1.2);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="logo2.jpg" alt="Empower Her Work" class="logo" />
+      <h1>Join Our Community</h1>
+      <p>
+        Register to access work-from-home opportunities tailored for
+        <strong style="color: brown;">Rural and Urban women</strong>
+      </p>
+    </div>
+
+    <form id="registrationForm">
+      <div class="form-group">
+        <label for="fullname">Full Name*</label>
+        <input type="text" id="fullname" name="fullname" placeholder="Enter Your Full Name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="village">Village/District*</label>
+        <input type="text" id="village" name="village" placeholder="Enter your village/district" required />
+      </div>
+
+      <div class="form-group">
+        <label for="phone">WhatsApp Number*</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter 10-digit WhatsApp number" pattern="\d{10}" maxlength="10" inputmode="numeric" required />
+      </div>
+
+      <div class="form-group">
+        <label for="education">Highest Education*</label>
+        <select id="education" name="education" required>
+          <option value="">Select</option>
+          <option value="8th">8th Pass</option>
+          <option value="10th">10th Pass</option>
+          <option value="12th">12th Pass</option>
+          <option value="graduate">Graduate</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div class="job-preferences">
+        <h3>Work Preferences*</h3>
+        <p>Select <strong>one</strong> type of work you're interested in:</p>
+
+        <div class="job-options">
+          <div class="job-option">
+            <input type="radio" name="job" value="Freelancing" required />
+            <label>Freelancing</label>
+          </div>
+          <div class="job-option">
+            <input type="radio" name="job" value="Handicrafts" />
+            <label>Handicrafts</label>
+          </div>
+          <div class="job-option">
+            <input type="radio" name="job" value="Jewelry Making" />
+            <label>HomeMade Jewelry Making</label>
+          </div>
+          <div class="job-option">
+            <input type="radio" name="job" value="Content Writing" />
+            <label>Content Writing</label>
+          </div>
+          <div class="job-option">
+            <input type="radio" name="job" value="Food Packaging" />
+            <label>Food Packaging</label>
+          </div>
+          <div class="job-option">
+            <input type="radio" name="job" value="Textile Work" />
+            <label>Textile Work</label>
+          </div>
+          <div class="job-option">
+            <input type="radio" name="job" value="Soap & Candle" />
+            <label>Natural Soap And Candle Making</label>
+          </div>
+          <div class="job-option">
+            <input type="radio" name="job" value="Pickles" />
+            <label>Pickles And Papad Making</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="skills">Your Skills (Max 100 words)</label>
+        <textarea id="skills" name="skills" rows="3" placeholder="E.g.: Embroidery, Cooking, Basic Computer"></textarea>
+        <p id="wordCount" style="font-size: 14px; color: gray;">0 / 100 words</p>
+      </div>
+
+      <div class="form-group">
+        <label for="tools">Available Tools/Equipment</label>
+        <input type="text" id="tools" name="tools" placeholder="E.g.: Sewing machine, Smartphone, Loom" />
+      </div>
+
+      <button type="submit" class="btn-submit">Register Now</button>
+    </form>
+
+    <div class="login-link">
+      Already registered?
+      <a href="#" style="color: rgb(205, 49, 72);">Sign in here</a>
+    </div>
+  </div>
+
+  <div class="balloon-container" id="balloonContainer"></div>
+
+  <script>
+    document.getElementById("registrationForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("🎉 Registration submitted successfully! We will contact you soon.");
+
+      const container = document.getElementById("balloonContainer");
+      for (let i = 0; i < 20; i++) {
+        const balloon = document.createElement("div");
+        balloon.className = "balloon";
+        balloon.style.left = Math.random() * 100 + "vw";
+        balloon.style.backgroundColor = getRandomColor();
+        container.appendChild(balloon);
+        setTimeout(() => {
+          balloon.remove();
+        }, 4000);
+      }
+
+      this.reset();
+      document.getElementById("wordCount").textContent = "0 / 100 words";
+    });
+
+    function getRandomColor() {
+      const colors = ["#ff4b5c", "#ffb400", "#00bbf0", "#9d65c9", "#50c878", "#ff69b4"];
+      return colors[Math.floor(Math.random() * colors.length)];
+    }
+
+    document.getElementById("skills").addEventListener("input", function () {
+      const maxWords = 100;
+      const text = this.value.trim();
+      const words = text.split(/\s+/).filter(word => word.length > 0);
+      const wordCount = words.length;
+      document.getElementById("wordCount").textContent = `${wordCount} / ${maxWords} words`;
+
+      if (wordCount > maxWords) {
+        this.value = words.slice(0, maxWords).join(" ");
+        alert("You can only enter up to 100 words.");
+      }
+    });
+  </script>
+</body>
+</html>
