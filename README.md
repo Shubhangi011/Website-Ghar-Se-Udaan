@@ -8,7 +8,8 @@ The project focuses on awareness, motivation, and empowerment of women.
 * Simple and clean design
 * Easy to understand for beginners
 
-🛠️ Technologies Used
+🛠️ Technologies Used =>
+
    HTML
    CSS
    Basic Javascript
