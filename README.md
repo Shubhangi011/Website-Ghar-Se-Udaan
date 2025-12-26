@@ -9,9 +9,9 @@ The project focuses on awareness, motivation, and empowerment of women.
 * Easy to understand for beginners
 
 🛠️ Technologies Used
-  # HTML
-  # CSS
-  # Basic Javascript
+   HTML
+   CSS
+   Basic Javascript
 
 🎯 Objective
 To help women gain confidence, independence, and awareness about earning opportunities from home.
